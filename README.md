@@ -29,25 +29,13 @@ Follow these steps to run the project locally.
 
 ### 1\. Clone the Repository
 
-bash
-
-CopyEdit
-
-`git clone https://github.com/m-sepehrimehr/Loyalty.git
-cd simple-loyalty-api`
+`git clone https://github.com/m-sepehrimehr/Loyalty.git`
 
 ### 2\. Run with Docker-compose
-
-bash
-
-CopyEdit
 
 `docker-compose up --build`
 
 ### 3\. Open in browser
 
-bash
-
-CopyEdit
 
 `http://localhost:5000/swagger`
