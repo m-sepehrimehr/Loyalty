@@ -37,5 +37,8 @@ Follow these steps to run the project locally.
 
 ### 3\. Open in browser
 
-
 `http://localhost:5000/swagger`
+
+### 4\. Use this credentials
+
+`username:test  password:test`
