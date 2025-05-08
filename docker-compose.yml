@@ -9,8 +9,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - Redis=redis:6379
+      - Keycloak__auth-server-url=http://keycloak:8080/
     depends_on:
       - redis
+      - keycloak
   redis:
     image: redis:latest
     ports:

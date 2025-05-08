@@ -14,6 +14,8 @@ namespace Loyalty.EndPoints.Api.Extensions
         {
             var options = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>();
 
+            var url = configuration["Keycloak:auth-server-url-external"];
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
@@ -31,10 +33,10 @@ namespace Loyalty.EndPoints.Api.Extensions
                         Implicit = new OpenApiOAuthFlow
                         {
                             AuthorizationUrl = new Uri(
-                                $"{options!.KeycloakUrlRealm}/protocol/openid-connect/auth"
+                                $"{url}realms/{options.Realm}/protocol/openid-connect/auth"
                             ),
                             TokenUrl = new Uri(
-                                $"{options.KeycloakUrlRealm}/protocol/openid-connect/token"
+                                $"{url}realms/{options.Realm}/protocol/openid-connect/token"
                             ),
                             Scopes = new Dictionary<string, string>(),
                             

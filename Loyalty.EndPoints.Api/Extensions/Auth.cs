@@ -20,10 +20,7 @@ namespace Loyalty.EndPoints.Api.Extensions
                     ValidateIssuer = false,
                     
                 };
-                x.Events.OnAuthenticationFailed = async (_) =>
-                {
-                    Console.WriteLine("dsa : " + _.Exception.Message);
-                };
+                
             });
 
             services

@@ -43,5 +43,4 @@ app.UseApplicationSwagger(builder.Configuration)
 
 app.MapControllers();
 
-
 app.Run();
