@@ -16,7 +16,7 @@ A minimalistic API built with .NET Core that allows users to earn and manage loy
 
 -   **XUnit + Moq** for unit testing
 
--   **OAuth2 Authentication** (Keycloak or other providers)
+-   **OAuth2 Authentication** (Keycloak)
 
 -   **Redis** caching for performance optimization
 
@@ -33,95 +33,21 @@ bash
 
 CopyEdit
 
-`git clone https://github.com/your-username/simple-loyalty-api.git
+`git clone https://github.com/m-sepehrimehr/Loyalty.git
 cd simple-loyalty-api`
 
-### 2\. Configure Environment
-
-Create a `.env` file or set the following variables in `appsettings.json`:
-
--   Database connection string
-
--   Redis connection string
-
--   OAuth2 settings (authority, clientId, etc.)
-
-### 3\. Run Database Migrations
+### 2\. Run with Docker-compose
 
 bash
 
 CopyEdit
 
-`dotnet ef database update`
+`docker-compose up --build`
 
-Make sure you have the EF Core CLI installed.
-
-### 4\. Build and Run with Docker
+### 3\. Open in browser
 
 bash
 
 CopyEdit
 
-`docker build -t loyalty-api .
-docker run -p 5000:80 loyalty-api`
-
-### 5\. Run Without Docker (Optional)
-
-bash
-
-CopyEdit
-
-`dotnet run`
-
-### 6\. Run Unit Tests
-
-bash
-
-CopyEdit
-
-`dotnet test`
-
-🛡️ Authentication
-------------------
-
-The API uses OAuth2 for authentication. Configure your Keycloak or OAuth2 provider in the settings, and make sure to secure your endpoints accordingly.
-
-🧪 Example Endpoint
--------------------
-
--   **POST** `/api/points/earn`\
-    Request body:
-
-    json
-
-    CopyEdit
-
-    `{
-      "userId": "123",
-      "points": 10
-    }`
-
-📂 Project Structure
---------------------
-
-diff
-
-CopyEdit
-
-`- Controllers/
-- Services/
-- Models/
-- Data/
-- Validators/
-- Tests/`
-
-📌 Prerequisites
-----------------
-
--   [.NET 7 SDK](https://dotnet.microsoft.com/download)
-
--   [Docker](https://www.docker.com/)
-
--   [Redis](https://redis.io/)
-
--   [Keycloak](https://www.keycloak.org/) or any OAuth2 provider
+`http://localhost:5000/swagger`
